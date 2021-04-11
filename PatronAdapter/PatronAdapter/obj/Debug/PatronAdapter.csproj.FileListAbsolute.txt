@@ -1,0 +1,7 @@
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\bin\Debug\PatronAdapter.exe.config
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\bin\Debug\PatronAdapter.exe
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\bin\Debug\PatronAdapter.pdb
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\obj\Debug\PatronAdapter.csprojAssemblyReference.cache
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\obj\Debug\PatronAdapter.csproj.CoreCompileInputs.cache
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\obj\Debug\PatronAdapter.exe
+C:\Users\lisan\source\repos\PatronAdapter\PatronAdapter\obj\Debug\PatronAdapter.pdb
