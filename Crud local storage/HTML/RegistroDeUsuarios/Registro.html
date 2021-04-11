@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="../../JS/registroDeUsuarios/validacionesLog.js"></script>
+    <script src="../../JS/Global.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../CSS/basic.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <h2>Formulario</h2>
+
+    <div ng-controller="ValidacionesController as validControl">
+
+        <lable>usuario:</lable>
+        <input id="nombreid" type="text" class="form-control" placeholder="nombre" ng-model="validControl.usuario">
+
+        <label>Clave:</label>
+        <input id="claveid" type="password" class="form-control" placeholder="clave" ng-model="validControl.clave">
+
+        <label for="">Repetir Clave:</label>
+        <input id="rclaveid" type="password" class="form-control" placeholder="clave" ng-model="validControl.rclave">
+
+
+        <button class="btn btn-default"
+            ng-disabled="validControl.clave != validControl.rclave || validControl.rclave == null || validControl.rclave == ''"
+            ng-click="validControl.addToUsuarios()">Registrar</button>
+
+        <p
+            ng-show="validControl.clave != validControl.rclave || validControl.rclave == null || validControl.rclave == ''">
+            Las Claves no coinciden o no son validas</p>
+        <p ng-show="validControl.usuariorepetido">El usuario esta repetido</p>
+
+    </div>
+</body>
+
+</html>
+
+<!-- 
+Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

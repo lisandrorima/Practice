@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="../../JS/Listados/Listado.js"></script>
+    <script src="../../JS/Global.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../CSS/basic.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Listado de promedios</h2>
+    <div ng-controller="ListadosController as ListadosController">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Estado</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+
+            <tr ng-repeat="alumno in ListadosController.listapromedios track by $index">
+
+
+                <td>{{alumno.dni}}</td>
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.apellido}}</td>
+                <td>{{alumno.estado.nombre}}</td>
+                <td>{{alumno.promedio}}</td>
+
+
+            </tr>
+        </table>
+
+        <button class="btn btn-default" ng-click="ListadosController.CargarPromedios();">Listar promedio de todos los alumnos</button>
+        <button class="btn btn-default" ng-click="ListadosController.LisarAplazados();">Listar aplazados</button>
+        <button class="btn btn-default" ng-click="ListadosController.ListarAprobados();">Listar aprobados</button>
+
+        <button class="btn btn-default" ng-click="ListadosController.ModificarUs();">Atras</button>
+
+
+    </div>
+
+
+
+    </div>
+</body>
+
+</html>
+
+<!-- 
+Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

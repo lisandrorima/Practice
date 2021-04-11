@@ -1,0 +1,85 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="../../JS/Perfiles/AMBPefiles.js"></script>
+    <script src="../../JS/Global.js"></script>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+            <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../CSS/basic.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h2>ABM PERFILES</h2>
+    <div ng-controller="PerfilesController as Perfiles">
+
+        <table class="table table-striped">
+            <tr ng-repeat="perfiles in Perfiles.lista">
+                <td>{{perfiles.nombre}}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="Perfiles.delUsuario($index)">Eliminar</button>
+                </td>
+                <td>
+                    <button class="btn btn-info"
+                        ng-click="Perfiles.ModificarUsuario(perfiles, $index)">Modificar</button>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-default" ng-click="Perfiles.nuevoUsuario()">Nuevo</button>
+        <button class="btn btn-default" ng-click="Perfiles.sendtoalumnos()">Atras</button>
+
+
+        <div ng-if="Perfiles.showFormulario">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" ng-model="Perfiles.NewUserNombre">
+            </div>
+
+
+            <div ng-switch="Perfiles.soyAlta">
+                <div ng-switch-when="true">
+                    <button class="btn btn-default" ng-click="Perfiles.addUsuario()">Guardar</button>
+                    <button class="btn btn-default" ng-click="Perfiles.showFormulario = false">X</button>
+
+                </div>
+                <div ng-switch-when="false">
+                    <button class="btn btn-default" ng-click="Perfiles.SaveModificarUsuario()">Modificar</button>
+                    <button class="btn btn-default" ng-click="Perfiles.showFormulario = false">X</button>
+
+                </div>
+                <div ng-switch-default>
+                    Error
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
+
+<!-- 
+Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="JS/Global.js"></script>
+    <script src="JS/Index.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../Trabajo Practico Lisandro Rima/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../Trabajo Practico Lisandro Rima/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../Trabajo Practico Lisandro Rima/CSS/basic.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Pagina principal</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <div class="col-6">
+                    <div ng-controller="logueoController as login">
+
+                        <button class="btn btn-default" ng-click="login.showFormulario = true">Login</button>
+                        <button class="btn btn-default" ng-click="login.Registrarse();">Registrarse</button>
+
+
+                        <div class="form-group" ng-if="login.showFormulario == true">
+                            <label for="exampleInputEmail1">Usuario</label>
+                            <input type="text" class="form-control" placeholder="Nombre" ng-model="login.usingresado">
+
+                            <label for="exampleInputPassword1">Clave</label>
+                            <input type="password" class="form-control" placeholder="clave"
+                                ng-model="login.clavingresado">
+                            <br />
+                            <button class="btn btn-default" ng-click="login.ingresar()">Ingresar</button>
+
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+</html>
+
+<!-- 
+Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
